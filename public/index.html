@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovassy László Gimnázium - Angol Vizsga Jelentkezés</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Jelentkezés feldolgozása...</p>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>Lovassy László Gimnázium</h1>
+          </div>
+          <nav class="nav">
+            <a href="#home" class="nav-link active">Kezdőlap</a>
+
+            <a href="#info" class="nav-link">Információ</a>
+            <a href="#application" class="nav-link">Jelentkezés</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h2 class="hero-title">Angol Nyelvi Felvételi Vizsga</h2>
+              <p class="hero-subtitle">
+                Jelentkezzen a Lovassy László Gimnázium angol tagozatára!
+              </p>
+              <div class="hero-features">
+                <div class="feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Professzionális oktatás</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Nemzetközi tanúsítványok</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Kis létszámú csoportok</span>
+                </div>
+              </div>
+              <button
+                class="cta-button"
+                onclick="scrollToSection('application')"
+              >
+                <i class="fas fa-arrow-right"></i>
+                Jelentkezés kezdése
+              </button>
+            </div>
+            <div class="hero-image">
+              <div class="hero-card">
+                <i class="fas fa-language"></i>
+                <h3>Magas színvonalú angol oktatás</h3>
+                <p>Tapasztalt tanárok és modern módszerek</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Information Section -->
+      <section id="info" class="info-section">
+        <div class="container">
+          <h2 class="section-title">Információk a vizsgáról</h2>
+          <div class="info-grid">
+            <div class="info-card">
+              <i class="fas fa-clock"></i>
+              <h3>Időtartam</h3>
+              <p>
+                A vizsga körülbelül 90 percet vesz igénybe, írásbeli és szóbeli
+                részekkel.
+              </p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-list-alt"></i>
+              <h3>Vizsga részei</h3>
+              <p>
+                Olvasásértés, nyelvhelyesség, fogalmazás és szóbeli
+                kommunikáció.
+              </p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-certificate"></i>
+              <h3>Követelmények</h3>
+              <p>Alapfokú angol nyelvtudás szükséges (A2-B1 szint).</p>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-calendar-alt"></i>
+              <h3>Jelentkezési határidő</h3>
+              <p>
+                A jelentkezési lap beküldésének határideje: 2025. február 15.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Application Form Section -->
+      <section id="application" class="application-section">
+        <div class="container">
+          <div class="form-header">
+            <h2 class="section-title">Jelentkezési lap</h2>
+            <p class="section-subtitle">
+              Töltse ki az alábbi űrlapot a jelentkezéshez
+            </p>
+          </div>
+
+          <form id="applicationForm" class="application-form">
+            <!-- Personal Information -->
+            <div class="form-section">
+              <h3 class="form-section-title">
+                <i class="fas fa-user"></i>
+                Személyi adatok
+              </h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">Keresztnév *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="form-input"
+                    required
+                  />
+                  <span class="error-message" id="firstNameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Vezetéknév *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="form-input"
+                    required
+                  />
+                  <span class="error-message" id="lastNameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">E-mail cím *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    required
+                  />
+                  <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Telefonszám</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="birthDate" class="form-label"
+                    >Születési dátum</label
+                  >
+                  <input
+                    type="date"
+                    id="birthDate"
+                    name="birthDate"
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="grade" class="form-label"
+                    >Jelenlegi évfolyam *</label
+                  >
+                  <select id="grade" name="grade" class="form-select" required>
+                    <option value="">Válasszon évfolyamot</option>
+                    <option value="8. osztály">8. osztály</option>
+                    <option value="9. évfolyam">9. évfolyam</option>
+                    <option value="10. évfolyam">10. évfolyam</option>
+                    <option value="11. évfolyam">11. évfolyam</option>
+                    <option value="Egyéb">Egyéb</option>
+                  </select>
+                  <span class="error-message" id="gradeError"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="school" class="form-label"
+                  >Jelenlegi iskola neve</label
+                >
+                <input
+                  type="text"
+                  id="school"
+                  name="school"
+                  class="form-input"
+                  placeholder="pl. Petőfi Sándor Általános Iskola"
+                />
+              </div>
+            </div>
+
+            <!-- English Level -->
+            <div class="form-section">
+              <h3 class="form-section-title">
+                <i class="fas fa-language"></i>
+                Angol nyelvi szint
+              </h3>
+              <div class="form-group">
+                <label for="englishLevel" class="form-label"
+                  >Becsült angol nyelvi szintje *</label
+                >
+                <select
+                  id="englishLevel"
+                  name="englishLevel"
+                  class="form-select"
+                  required
+                >
+                  <option value="">Válasszon szintet</option>
+                  <option value="Kezdő (A1)">Kezdő (A1)</option>
+                  <option value="Alapfok alsó (A2)">Alapfok alsó (A2)</option>
+                  <option value="Alapfok felső (B1)">Alapfok felső (B1)</option>
+                  <option value="Középfok alsó (B2)">Középfok alsó (B2)</option>
+                  <option value="Középfok felső (C1)">
+                    Középfok felső (C1)
+                  </option>
+                  <option value="Felsőfok (C2)">Felsőfok (C2)</option>
+                </select>
+                <span class="error-message" id="englishLevelError"></span>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+              <button type="submit" class="submit-button">
+                <i class="fas fa-paper-plane"></i>
+                Jelentkezés elküldése
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Lovassy László Gimnázium</h3>
+            <p>Magas színvonalú oktatás 1858 óta</p>
+          </div>
+          <div class="footer-section">
+            <h4>Kapcsolat</h4>
+            <p><i class="fas fa-envelope"></i> info@lovassy.hu</p>
+            <p><i class="fas fa-phone"></i> +36 88 123 456</p>
+          </div>
+          <div class="footer-section">
+            <h4>Cím</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> 8200 Veszprém, Dózsa György
+              út 5.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Lovassy László Gimnázium. Minden jog fenntartva.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fas fa-check-circle success-icon"></i>
+          <h3>Sikeres jelentkezés!</h3>
+        </div>
+        <div class="modal-body">
+          <p>Jelentkezését sikeresen elküldtük!</p>
+          <p>Hamarosan visszaigazoló e-mailt fog kapni a megadott címre.</p>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-button" onclick="closeModal()">Rendben</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fas fa-exclamation-triangle error-icon"></i>
+          <h3>Hiba történt</h3>
+        </div>
+        <div class="modal-body">
+          <p id="errorMessage">
+            Hiba történt a jelentkezés feldolgozása során.
+          </p>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-button" onclick="closeModal()">Bezárás</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
